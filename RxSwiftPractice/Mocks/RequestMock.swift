@@ -30,9 +30,9 @@ class RequestMock {
         return  Observable.create({ (observer) -> Disposable in
             let time = Double.random(in: 1 ..< 4)
             print("run Request")
-            print("request time\(time)")
-            DispatchQueue.global().asyncAfter(deadline: .now() + time, execute: {
+            let timer = Timer.scheduledTimer(withTimeInterval: time, repeats: false, block: { (_) in
                 let random = Double.random(in: 0 ..< 100)
+                print("request time\(time)")
                 if random > 100 * successProbability {
                     let error = NSError(domain: "request", code: 0, userInfo: [NSLocalizedDescriptionKey: "mock request error"])
                     observer.onError(error)
@@ -41,7 +41,10 @@ class RequestMock {
                     observer.onCompleted()
                 }
             })
-            return Disposables.create()
+            return Disposables.create {
+                print("request did cancel")
+                timer.invalidate()
+            }
         })
     }
 }
