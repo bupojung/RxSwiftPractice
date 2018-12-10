@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-L8-tLs">
-                    <rect key="frame" x="172.5" y="93" width="30" height="30"/>
+                    <rect key="frame" x="165" y="93" width="30" height="30"/>
                     <state key="normal" title="tap"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nodata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVz-c5-vHu">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nodata" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVz-c5-vHu">
                     <rect key="frame" x="160" y="323" width="54" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -35,7 +35,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="pLh-L8-tLs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="imo-Tb-3bp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fVz-c5-vHu" secondAttribute="trailing" constant="15" id="UST-jW-0s8"/>
+                <constraint firstItem="fVz-c5-vHu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k7y-DR-ok4"/>
                 <constraint firstItem="fVz-c5-vHu" firstAttribute="centerX" secondItem="pLh-L8-tLs" secondAttribute="centerX" id="vhL-5o-5A3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pLh-L8-tLs" secondAttribute="bottom" constant="544" id="x7T-Wu-ebZ"/>
                 <constraint firstItem="fVz-c5-vHu" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="xFY-WE-iDg"/>
