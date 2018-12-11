@@ -15,6 +15,7 @@ class TimeOutAndRetryViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +34,6 @@ class TimeOutAndRetryViewController: UIViewController {
         self.button.rx.tap.debug("tap").flatMapLatest{ _ in
             return self.request().catchError { (error) -> Observable<Result<String>> in
                 // show retry view
-//                let error = NSError(domain: "requesr", code: 99, userInfo: [NSLocalizedDescriptionKey:"timeout"])
                 return Observable.just(.error(error))
             }
             }.debug("request")
