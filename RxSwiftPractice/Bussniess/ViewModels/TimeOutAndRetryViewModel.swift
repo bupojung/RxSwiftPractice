@@ -13,7 +13,6 @@ import RxCocoa
 class TimeOutAndRetryViewModel: ViewModelType {
     func request() -> Observable<Result<String>> {
         return RequestMock.request(result: "data__", successProbability: 1.0).timeout(2.0, scheduler: MainScheduler.instance)
-            .share()
     }
     struct Input {
         let refreshTap: Observable<()>
@@ -46,16 +45,18 @@ class TimeOutAndRetryViewModel: ViewModelType {
         }.asDriver(onErrorJustReturn: true).startWith(false)
 
         let hideButton = triger.flatMap { (_) -> Observable<Bool> in
-            return startRequest.flatMap({ (result) -> Observable<Bool> in
+            return aRequest.flatMap({ (result) -> Observable<Bool> in
                 switch result {
                 case .error(_):
+                    print("error")
                     return Observable.just(false)
                 default:
+                    print("succ")
                     return Observable.just(true)
                 }
             }).startWith(true)
         }
-        .asDriver(onErrorJustReturn: false).startWith(true)
+        .asDriver(onErrorJustReturn: false).startWith(true).debug()
         
         let hideLabel = startRequest.flatMap({ (result) -> Observable<Bool> in
                 switch result {
