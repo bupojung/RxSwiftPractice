@@ -12,8 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeOutAndRetryViewController" customModule="RxSwiftPractice" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="pLh-L8-tLs" id="NoG-cf-IS0"/>
+                <outlet property="button" destination="pLh-L8-tLs" id="IkG-JU-XLH"/>
                 <outlet property="loadingView" destination="DjD-fv-4R6" id="RR1-f8-hZA"/>
+                <outlet property="refresh" destination="vcL-rd-6JI" id="ghU-ML-u7y"/>
                 <outlet property="resultLabel" destination="fVz-c5-vHu" id="MIJ-qw-Whs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,8 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nodata" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVz-c5-vHu">
-                    <rect key="frame" x="160" y="323" width="54" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nodata" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVz-c5-vHu">
+                    <rect key="frame" x="0.0" y="333.5" width="360" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -32,9 +33,13 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-fv-4R6">
                     <rect key="frame" x="177.5" y="333.5" width="20" height="20"/>
                 </activityIndicatorView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-L8-tLs">
-                    <rect key="frame" x="110" y="253" width="154" height="46"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-L8-tLs">
+                    <rect key="frame" x="110.5" y="328.5" width="154" height="30"/>
                     <state key="normal" title="Please touch and retry"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcL-rd-6JI">
+                    <rect key="frame" x="146" y="95" width="83" height="30"/>
+                    <state key="normal" title="refresh data"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,6 +50,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fVz-c5-vHu" secondAttribute="trailing" constant="15" id="UST-jW-0s8"/>
                 <constraint firstItem="pLh-L8-tLs" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gHu-qA-dhE"/>
                 <constraint firstItem="fVz-c5-vHu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="k7y-DR-ok4"/>
+                <constraint firstItem="vcL-rd-6JI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="75" id="o0U-q1-4S0"/>
+                <constraint firstItem="vcL-rd-6JI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="tUR-NY-pSc"/>
                 <constraint firstItem="fVz-c5-vHu" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="xFY-WE-iDg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

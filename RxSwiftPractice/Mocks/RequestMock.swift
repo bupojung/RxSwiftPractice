@@ -29,7 +29,7 @@ class RequestMock {
         }
         return  Observable.create({ (observer) -> Disposable in
             let time = Double.random(in: 1 ..< 4)
-            print("run Request")
+            print("run Request time: \(time)")
             let timer = Timer.scheduledTimer(withTimeInterval: time, repeats: false, block: { (_) in
                 let random = Double.random(in: 0 ..< 100)
                 print("request time\(time)")
@@ -42,7 +42,7 @@ class RequestMock {
                 }
             })
             return Disposables.create {
-                print("request did cancel")
+                print("request did disposed")
                 timer.invalidate()
             }
         })

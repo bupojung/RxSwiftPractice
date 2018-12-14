@@ -12,41 +12,30 @@ import RxCocoa
 
 class TimeOutAndRetryViewController: UIViewController {
     var bag = DisposeBag()
-
+    var viewModel = TimeOutAndRetryViewModel()
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    @IBOutlet weak var refresh: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         bind()
     }
-
-
-
-    func request() -> Observable<Result<String>> {
-        return RequestMock.request(result: "data", successProbability: 0.8).timeout(2.0, scheduler: MainScheduler.instance)
-            .share()
-    }
     
     func bind() {
-        self.button.rx.tap.debug("tap").flatMapLatest{ _ in
-            return self.request().catchError { (error) -> Observable<Result<String>> in
-                // show retry view
-                return Observable.just(.error(error))
-            }
-            }.debug("request")
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (r) in
-                // show data
-                switch r {
-                case .succ(let data):
-                    self.resultLabel.text = data
-                case .error(let e):
-                    self.resultLabel.text = e.localizedDescription
-                }
-            }).disposed(by: bag)
+        let willAppear = self.rx.viewWillAppear.asObservable().map{ _ in }
+        let tap = self.button.rx.tap.asObservable()
+        let refreshTap = self.refresh.rx.tap.asObservable()
+        let input = TimeOutAndRetryViewModel.Input(refreshTap: refreshTap, retryTap: tap, viewDidShow: willAppear)
+        let output = self.viewModel.transform(input)
+        
+
+
+        output.loading.drive(loadingView.rx.isHidden).disposed(by: bag)
+        output.showButton.drive(button.rx.isHidden).disposed(by: bag)
+        output.showLabel.drive(resultLabel.rx.isHidden).disposed(by: bag)
+        output.result.drive(resultLabel.rx.text).disposed(by: bag)
     }
 
 }
