@@ -1,4 +1,8 @@
 Pods/
 !Podfile.lock
 *.xcuserstate
+UserInterfaceState.xcuserstate
+xcuserdata
+xcuserdata/
+UserInterface.xcuserstate
 
