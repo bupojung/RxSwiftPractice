@@ -21,9 +21,9 @@ class TimeOutAndRetryViewModel: ViewModelType {
     }
     
     struct Output {
-        let loading: Driver<Bool>
-        let showButton: Driver<Bool>
-        let showLabel: Driver<Bool>
+        let loadingIsHidden: Driver<Bool>
+        let retyButtonIsHidden: Driver<Bool>
+        let labelIsHidden: Driver<Bool>
         let result: Driver<String>
     }
     
@@ -76,6 +76,6 @@ class TimeOutAndRetryViewModel: ViewModelType {
             }
         }.asDriver(onErrorJustReturn: "")
         
-        return Output(loading: hideLoading, showButton: hideButton, showLabel: hideLabel, result: result)
+        return Output(loadingIsHidden: hideLoading, retyButtonIsHidden: hideButton, labelIsHidden: hideLabel, result: result)
     }
 }

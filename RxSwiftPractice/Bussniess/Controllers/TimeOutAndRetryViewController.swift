@@ -32,9 +32,9 @@ class TimeOutAndRetryViewController: UIViewController {
         
 
 
-        output.loading.drive(loadingView.rx.isHidden).disposed(by: bag)
-        output.showButton.drive(button.rx.isHidden).disposed(by: bag)
-        output.showLabel.drive(resultLabel.rx.isHidden).disposed(by: bag)
+        output.loadingIsHidden.drive(loadingView.rx.isHidden).disposed(by: bag)
+        output.retyButtonIsHidden.drive(button.rx.isHidden).disposed(by: bag)
+        output.labelIsHidden.drive(resultLabel.rx.isHidden).disposed(by: bag)
         output.result.drive(resultLabel.rx.text).disposed(by: bag)
     }
 
