@@ -20,9 +20,15 @@ class TimeOutAndRetryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("RxSwift Resources:\(Resources.total)")
         bind()
     }
     
+    deinit {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            print("deinit RxSwift Resources:\(Resources.total)")
+        }
+    }
     func bind() {
         let willAppear = self.rx.viewWillAppear.asObservable().map{ _ in }
         let tap = self.button.rx.tap.asObservable()

@@ -17,9 +17,9 @@
 		EF8153C021BED0710043ABE1 /* TimeOutAndRetryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8153BE21BED0710043ABE1 /* TimeOutAndRetryViewController.swift */; };
 		EF8153C121BED0710043ABE1 /* TimeOutAndRetryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8153BF21BED0710043ABE1 /* TimeOutAndRetryViewController.xib */; };
 		EF8153C421BED9040043ABE1 /* RequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8153C321BED9040043ABE1 /* RequestMock.swift */; };
-		EF8153C821C028F20043ABE1 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8153C721C028F20043ABE1 /* UIViewController+Rx.swift */; };
 		EF89D1EA21BF54B500475748 /* TimeOutAndRetryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89D1E921BF54B500475748 /* TimeOutAndRetryViewModel.swift */; };
 		EF89D1ED21BF550700475748 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF89D1EC21BF550700475748 /* ViewModelType.swift */; };
+		EFE0FA0E21CA1A8A00379AA4 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE0FA0D21CA1A8A00379AA4 /* UIViewController+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +49,9 @@
 		EF8153BE21BED0710043ABE1 /* TimeOutAndRetryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutAndRetryViewController.swift; sourceTree = "<group>"; };
 		EF8153BF21BED0710043ABE1 /* TimeOutAndRetryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeOutAndRetryViewController.xib; sourceTree = "<group>"; };
 		EF8153C321BED9040043ABE1 /* RequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMock.swift; sourceTree = "<group>"; };
-		EF8153C721C028F20043ABE1 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		EF89D1E921BF54B500475748 /* TimeOutAndRetryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeOutAndRetryViewModel.swift; sourceTree = "<group>"; };
 		EF89D1EC21BF550700475748 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		EFE0FA0D21CA1A8A00379AA4 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +113,7 @@
 		EF5696B221BEB81700F26332 /* RxSwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
-				EF8153C621C028C90043ABE1 /* RxExtension */,
+				EFE0FA0C21CA1A8A00379AA4 /* RxExtension */,
 				EF8153C221BED8E20043ABE1 /* Mocks */,
 				EF89D1E521BF544700475748 /* Bussniess */,
 				EF5696B321BEB81700F26332 /* AppDelegate.swift */,
@@ -143,25 +143,11 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		EF8153C521C027A10043ABE1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		EF8153C621C028C90043ABE1 /* RxExtension */ = {
-			isa = PBXGroup;
-			children = (
-				EF8153C721C028F20043ABE1 /* UIViewController+Rx.swift */,
-			);
-			path = RxExtension;
-			sourceTree = "<group>";
-		};
 		EF89D1E521BF544700475748 /* Bussniess */ = {
 			isa = PBXGroup;
 			children = (
-				EF8153C521C027A10043ABE1 /* Views */,
+				EF89D1EB21BF54BB00475748 /* Models */,
+				EF89D1E821BF547400475748 /* Views */,
 				EF89D1E721BF546900475748 /* Controllers */,
 				EF89D1E621BF545800475748 /* ViewModels */,
 			);
@@ -184,6 +170,28 @@
 				EF8153BF21BED0710043ABE1 /* TimeOutAndRetryViewController.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF89D1E821BF547400475748 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EF89D1EB21BF54BB00475748 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EFE0FA0C21CA1A8A00379AA4 /* RxExtension */ = {
+			isa = PBXGroup;
+			children = (
+				EFE0FA0D21CA1A8A00379AA4 /* UIViewController+Rx.swift */,
+			);
+			path = RxExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +347,7 @@
 				EF5696B621BEB81700F26332 /* ViewController.swift in Sources */,
 				EF5696B421BEB81700F26332 /* AppDelegate.swift in Sources */,
 				EF8153C421BED9040043ABE1 /* RequestMock.swift in Sources */,
-				EF8153C821C028F20043ABE1 /* UIViewController+Rx.swift in Sources */,
+				EFE0FA0E21CA1A8A00379AA4 /* UIViewController+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

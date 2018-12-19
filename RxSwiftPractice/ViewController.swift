@@ -26,6 +26,7 @@ class ViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didSelectRowAt RxSwift Resources:\(Resources.total)")
         let vc = TimeOutAndRetryViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
